@@ -35,7 +35,7 @@ class ElevatorCabinCommand {
 function parseFloor(floor) {
   const _floor = Number.parseInt(floor)
   if (Number.isNaN(_floor)) {
-    throw new Error('invalid floor')
+    throw parseError('invalid floor')
   }
   return _floor
 }
@@ -43,9 +43,19 @@ function parseFloor(floor) {
 function parseDirection(direction) {
   const _direction = knownDirections[direction.toLowerCase()]
   if (!_direction) {
-    throw new Error('invalid direction')
+    throw parseError('invalid direction')
   }
   return _direction
 }
 
-module.exports = { ElevatorPlatformCommand, ElevatorCabinCommand }
+function parseError(message) {
+  const err = new Error(message)
+  err.code = 'PARSE_ERROR'
+  return err
+}
+
+function isParseError(err) {
+  return err.code === 'PARSE_ERROR'
+}
+
+module.exports = { ElevatorPlatformCommand, ElevatorCabinCommand, isParseError }
