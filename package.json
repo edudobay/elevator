@@ -1,0 +1,11 @@
+{
+  "name": "elevator",
+  "version": "1.0.0",
+  "description": "control an elevator",
+  "author": "Eduardo Dobay <edudobay@gmail.com>",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
