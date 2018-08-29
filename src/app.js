@@ -12,7 +12,7 @@ app.get('/:floor,:direction', (req, res) => {
   res.json({})
 })
 
-app.get('/cabin/:floor', (req, res) => {
+app.get('/:floor', (req, res) => {
   const { floor } = req.params
   logger.info(`Elevator requested to floor "${floor}" from cabin`)
   const command = ElevatorCabinCommand.parse(floor)
