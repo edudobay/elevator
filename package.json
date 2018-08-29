@@ -5,7 +5,13 @@
   "author": "Eduardo Dobay <edudobay@gmail.com>",
   "main": "src/index.js",
   "license": "MIT",
+  "scripts": {
+    "serve": "nodemon src/main.js"
+  },
   "dependencies": {
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
   }
 }
